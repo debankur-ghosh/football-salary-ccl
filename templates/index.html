@@ -29,10 +29,11 @@ body{
 </form>
 	    <br/>
 	    <br/>
+	 <input type="text" name="trophy" placeholder="trophies won" required="required" />
+	    <br/>
+	    <br/>
 	 <form action="{{ url_for('predict')}}"method="post">
-	    <input type="text" name="name" placeholder="player's name" required="required" />
-	    <br/>
-	    <br/>
+	    
     	<input type="text" name="age" placeholder="player age" required="required" />
 	    <br/>
 	    <br/>
@@ -42,9 +43,7 @@ body{
 		<input type="text" name="matches" placeholder="matches played" required="required" />
 	    <br/>
 	    <br/>
-	    <input type="text" name="trophy" placeholder="trophies won" required="required" />
-	    <br/>
-	    <br/>
+	   
 
         <button type="submit" class="btn btn-primary btn-block btn-large" onClick="pr()">Predict</button>
 	    <br/>
@@ -55,15 +54,15 @@ body{
 	 <script>
 		  document.getElementById('click').onclick=function(){
     var box=document.getElementById('search');
-    window.open(href='http://www.google.com/search?q='+escape(box.value));
+    window.open(href='http://www.google.com/search?q='+escape(box.value));}
           
         </script>
 
    <br>
    <br>
-	 <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(12, 43, 41, 0.801); font-size: 20px;" ><span id="result"></span>player's annual salary should be €</p>
+	 <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(12, 43, 41, 0.801); font-size: 20px;" >player's annual salary should be €</p>
 	 {{ prediction_text }}
-	 <p>/-</p>
+	 
 
  </div>
 
