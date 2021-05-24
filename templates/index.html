@@ -23,7 +23,13 @@ body{
 	
 
     <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(8, 64, 167, 0.842); font-size: 45px;" >Predict Football Player's Anual Salary</p>
-    <form action="{{ url_for('predict')}}"method="post">
+    <form>  
+	<input type="text" name="name" placeholder="player's name" id="search" required="required" />
+	<input type="button" id="click" value="Search!" />
+</form>
+	    <br/>
+	    <br/>
+	 <form action="{{ url_for('predict')}}"method="post">
 	    <input type="text" name="name" placeholder="player's name" required="required" />
 	    <br/>
 	    <br/>
@@ -47,15 +53,17 @@ body{
     </form>
 	 
 	 <script>
-          function pr() {
-            document.getElementById("result").innerHTML = document.getElementById('fname').value;
-          }
+		  document.getElementById('click').onclick=function(){
+    var box=document.getElementById('search');
+    window.open(href='http://www.google.com/search?q='+escape(box.value));
+          
         </script>
 
    <br>
    <br>
-	 <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(12, 43, 41, 0.801); font-size: 20px;" ><span id="result"></span>'s annual salary should be €</p>
-   {{ prediction_text }}
+	 <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(12, 43, 41, 0.801); font-size: 20px;" ><span id="result"></span>player's annual salary should be €</p>
+	 {{ prediction_text }}
+	 <p>/-</p>
 
  </div>
 
