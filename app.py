@@ -21,7 +21,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text="Footballer's Salary should be € {}".format(output))
+    return render_template('index.html', prediction_text="{}".format(output))
 
 
 if __name__ == "__main__":
