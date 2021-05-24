@@ -22,8 +22,11 @@ body{
  <div class="login">
 	
 
-    <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(8, 64, 167, 0.842); font-size: 45px;" >Predict Football Player's Salary</p>
+    <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(8, 64, 167, 0.842); font-size: 45px;" >Predict Football Player's Anual Salary</p>
     <form action="{{ url_for('predict')}}"method="post">
+	    <input type="text" name="name" placeholder="player's name" required="required" />
+	    <br/>
+	    <br/>
     	<input type="text" name="age" placeholder="player age" required="required" />
 	    <br/>
 	    <br/>
@@ -33,18 +36,25 @@ body{
 		<input type="text" name="matches" placeholder="matches played" required="required" />
 	    <br/>
 	    <br/>
-	    <input type="text" name="matches" placeholder="matches played" required="required" />
+	    <input type="text" name="trophy" placeholder="trophies won" required="required" />
 	    <br/>
 	    <br/>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <button type="submit" class="btn btn-primary btn-block btn-large" onClick="pr()">Predict</button>
 	    <br/>
 	    <br/>
 	    
     </form>
+	 
+	 <script>
+          function pr() {
+            document.getElementById("result").innerHTML = document.getElementById('fname').value;
+          }
+        </script>
 
    <br>
    <br>
+	 <p style="font-family: Arial, Helvetica, sans-serif; color: rgba(12, 43, 41, 0.801); font-size: 20px;" ><span id="result"></span>'s annual salary should be €</p>
    {{ prediction_text }}
 
  </div>
